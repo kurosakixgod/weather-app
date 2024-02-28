@@ -1,0 +1,16 @@
+{
+  "weathers": [
+    {
+      "id": 524901,
+      "temperature": 275.65,
+      "cityName": "Moscow",
+      "windSpeed": 4.25
+    },
+    {
+      "id": 569591,
+      "temperature": 272.57,
+      "cityName": "Chekhov",
+      "windSpeed": 4.02
+    }
+  ]
+}

@@ -1,15 +1,32 @@
 import { FC, useState, ChangeEvent } from "react";
 import "./addCard.sass";
 import Plus from "../../ui/icons/plus";
+import { requestToApi, requestToDB } from "../../service/requests";
+import { useDispatch } from "react-redux";
+import { weatherCreated } from "../../slices/weatherSlice";
+
 const AddCard: FC = () => {
 	const [location, setLocaiton] = useState("");
-
-	const onChange = (e: ChangeEvent<HTMLInputElement>): void => {
+	const dispatch = useDispatch();
+	const onChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setLocaiton(e.target.value);
 	};
 
 	const onSubmit = (): void => {
-		console.log(location);
+		requestToApi(location).then((data) => {
+			console.log(data);
+			const newWeatherObj = {
+				temperature: data.main.temp ?? "unknown",
+				cityName: data.name ?? "unknown",
+				id: data.id ?? "unknown",
+				windSpeed: data.wind.speed ?? "unknown",
+			};
+			requestToDB(
+				"http://localhost:3001/weathers",
+				"POST",
+				JSON.stringify(newWeatherObj)
+			).then(() => dispatch(weatherCreated(newWeatherObj)));
+		});
 	};
 	return (
 		<div className="card">
