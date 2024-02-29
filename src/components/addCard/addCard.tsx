@@ -4,6 +4,8 @@ import Plus from "../../ui/icons/plus";
 import { requestToApi, requestToDB } from "../../service/requests";
 import { useDispatch } from "react-redux";
 import { weatherCreated } from "../../slices/weatherSlice";
+import { v4 as idV4} from "uuid";
+
 
 const AddCard: FC = () => {
 	const [location, setLocaiton] = useState("");
@@ -18,7 +20,7 @@ const AddCard: FC = () => {
 			const newWeatherObj = {
 				temperature: data.main.temp ?? "unknown",
 				cityName: data.name ?? "unknown",
-				id: data.id ?? "unknown",
+				id: idV4(),
 				windSpeed: data.wind.speed ?? "unknown",
 			};
 			requestToDB(

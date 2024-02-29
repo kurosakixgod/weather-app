@@ -41,7 +41,7 @@ const weatherSlice = createSlice({
 			state.weathers.push(action.payload);
 		},
 		weatherDeleted: (state, action) => {
-			state.weathers.filter((weather) => weather.id !== action.payload);
+			state.weathers = state.weathers.filter((weather) => weather.id !== action.payload);
 		},
 	},
 });

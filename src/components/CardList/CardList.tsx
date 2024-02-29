@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect } from "react";
+import { useEffect } from "react";
 import AddCard from "../addCard/addCard";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -19,12 +19,12 @@ const CardList = () => {
 	);
 	const dispatch = useDispatch();
 
-	const onDelete = (id: number) => {
-		console.log("deleted");
-
+	const onDelete = (id: string) => {
+	
 		requestToDB(`http://localhost:3001/weathers/${id}`, "DELETE")
+			.then(() => console.log("deleted"))
 			.then(() => dispatch(weatherDeleted(id)))
-			.catch((err) => console.log(err));
+			.catch((err) => console.log(`Привет ${err}`));
 	};
 
 	const renderWeathers = (arr: []) => {
@@ -42,6 +42,12 @@ const CardList = () => {
 	}, []);
 
 	const elements = renderWeathers(weathers);
+
+	if (weathersLoadingStatus === 'loading') {
+		return <h2>loading...</h2>
+	} else if(weathersLoadingStatus === 'error') return <h2>error</h2>
+
+
 
 	return (
 		<div className="cards">

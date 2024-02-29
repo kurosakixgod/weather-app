@@ -1,16 +1,16 @@
 {
   "weathers": [
     {
-      "id": 524901,
-      "temperature": 275.65,
+      "id": "50a02ba0-571a-470f-89b3-357bf772df7d",
+      "temperature": 272.61,
       "cityName": "Moscow",
-      "windSpeed": 4.25
+      "windSpeed": 3.87
     },
     {
-      "id": 569591,
-      "temperature": 272.57,
-      "cityName": "Chekhov",
-      "windSpeed": 4.02
+      "id": "2c060da0-2242-42bf-98f1-afb6d0e35a48",
+      "temperature": 306.01,
+      "cityName": "Singapore",
+      "windSpeed": 7.2
     }
   ]
 }
