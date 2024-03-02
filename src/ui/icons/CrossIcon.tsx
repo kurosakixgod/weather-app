@@ -1,11 +1,10 @@
-import "./cross.sass";
-
 interface OnDeleteFunction {
 	onDelete: (id: string) => void;
 	id: string;
+	className: string;
 }
 
-const Cross = ({ onDelete, id }: OnDeleteFunction) => {
+const CrossIcon = ({ onDelete, id }: OnDeleteFunction) => {
 	return (
 		<svg
 			onClick={() => onDelete(id)}
@@ -26,4 +25,4 @@ const Cross = ({ onDelete, id }: OnDeleteFunction) => {
 	);
 };
 
-export default Cross;
+export default CrossIcon;

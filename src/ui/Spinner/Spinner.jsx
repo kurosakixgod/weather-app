@@ -1,7 +1,32 @@
-// const Spinner = () => {
-//     return (
-//         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_ZCsl{animation:spinner_qV4G 1.2s cubic-bezier(0.52,.6,.25,.99) infinite}.spinner_gaIW{animation-delay:.6s}@keyframes spinner_qV4G{0%{r:0;opacity:1}100%{r:11px;opacity:0}}</style><circle class="spinner_ZCsl" cx="12" cy="12" r="0"/><circle class="spinner_ZCsl spinner_gaIW" cx="12" cy="12" r="0"/></svg>
-//     );
-// }
+const Spinner = () => {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="200px"
+			height="200px"
+			viewBox="0 0 100 100"
+			preserveAspectRatio="xMidYMid"
+		>
+			<circle
+				cx="50"
+				cy="50"
+				fill="none"
+				stroke="#85a2b6"
+				strokeWidth="10"
+				r="35"
+				stroke-dasharray="164.93361431346415 56.97787143782138"
+			>
+				<animateTransform
+					attributeName="transform"
+					type="rotate"
+					repeatCount="indefinite"
+					dur="1s"
+					values="0 50 50;360 50 50"
+					keyTimes="0;1"
+				></animateTransform>
+			</circle>
+		</svg>
+	);
+};
 
-// export default Spinner
+export default Spinner;

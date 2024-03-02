@@ -1,4 +1,4 @@
-const Plus = () => {
+const PlusIcon = () => {
 	return (
 		<svg
 			width="50%"
@@ -17,4 +17,4 @@ const Plus = () => {
 	);
 };
 
-export default Plus;
+export default PlusIcon;

@@ -4,3 +4,8 @@ export interface WeatherObject {
 	cityName: string;
 	id: string;
 }
+
+export enum Positinos {
+	Absolute = "absolute",
+	Relative = "relative",
+}
